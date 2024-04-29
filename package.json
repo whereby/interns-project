@@ -6,7 +6,8 @@
   "author": "Håvard Holvik <havard@whereby.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "winston": "^3.13.0"
   },
   "scripts": {
     "start": "node server.js"
