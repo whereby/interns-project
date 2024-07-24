@@ -10,7 +10,7 @@ Nodejs applications using different AWS services
 3. In this directory, do `yarn install`
 4. Once all dependencies have installed, do `yarn start` to start the actual
    server
-5. Visit localhost:3000, verify you see `Hello World!`
+5. Visit http://localhost:3000, verify you see `Hello World!`
 
 ## Environment variables
 
