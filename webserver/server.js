@@ -53,23 +53,29 @@ async function main() {
   server.get("/", async (req, res) => {
     logger.info("GET /");
 
-    if (!req.query.sessionId) {
+    if (!(req.query.sessionId && db)) {
       res.json({ message: "Hello there stranger!" });
-    } else if (db) {
-      const sessions = db.collection("sessions");
-      await sessions.updateOne(
-        {
-          _id: req.query.sessionId,
-        },
-        { $set: { lastVisit: new Date() }, $inc: { nVisits: 1 } },
-        { upsert: true }
-      );
+    } else {
+      try {
+        const sessions = db.collection("sessions");
+        await sessions.updateOne(
+          {
+            _id: req.query.sessionId,
+          },
+          { $set: { lastVisit: new Date() }, $inc: { nVisits: 1 } },
+          { upsert: true }
+        );
 
-      const doc = await sessions.findOne({ _id: req.query.sessionId });
+        const doc = await sessions.findOne({ _id: req.query.sessionId });
 
-      res.json({
-        message: `Hello there friend, this is your ${doc.nVisits} visit`,
-      });
+        res.json({
+          message: `Hello there friend!`,
+          nVisits: doc.nVisits,
+        });
+      } catch (error) {
+        logger.error(`Failed to update session: ${error}`);
+        res.status(500).json({ message: "Internal server error" });
+      }
     }
   });
 
