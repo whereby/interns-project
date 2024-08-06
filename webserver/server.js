@@ -1,3 +1,4 @@
+const cors = require("cors");
 const express = require("express");
 const { MongoClient } = require("mongodb");
 const path = require("path");
@@ -49,6 +50,8 @@ async function main() {
   // Set up http server
   const server = express();
   const port = parseInt(process.env.WHEREBY_INTERNS_PORT || "3000");
+
+  server.use(cors());
 
   server.get("/", async (req, res) => {
     logger.info("GET /");
