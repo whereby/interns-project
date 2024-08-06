@@ -1,5 +1,5 @@
 {
-  "name": "interns-project",
+  "name": "webserver",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:whereby/interns-project.git",
@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
+    "mongodb": "^6.8.0",
     "winston": "^3.13.0"
   },
   "scripts": {

@@ -20,3 +20,7 @@ a a file at `<WHEREBY_INTERNS_LOG_DIR>/webserver.log`.
 
 `WHEREBY_INTERNS_PORT` - The TCP port which the server should listen for HTTP
 requests. If not set, port 3000 will be used as default.
+
+`WHEREBY_INTERNS_DB_URL` - The db url to use when connecting to the database.
+When hosted on AWS, this may be the url to connect to a AWS DocumentDB, which is
+compatible with Mongo.

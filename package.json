@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "workspaces": [
+    "webpage",
+    "webserver"
+  ],
+  "scripts": {
+    "start": "yarn workspace webserver start & WHEREBY_INTERNS_WEBSERVER_URL=http://localhost:3000 yarn workspace webpage start"
+  }
+}
