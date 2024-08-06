@@ -22,9 +22,9 @@ corresponding directories.
 
 1. Pull this repository
 2. Ensure you have Docker, Nodejs 20 + yarn installed
-3. In both application directories, do `yarn install`
-4. Ensure you have MongoDB installed and running
+3. Ensure you have MongoDB installed and running
    (https://www.mongodb.com/docs/manual/tutorial/install-mongodb-community-with-docker/)
+4. Do `yarn install`
 5. Once all dependencies have installed, do `yarn start` to start the actual
-   server
+   applications
 6. Visit http://localhost:8080, verify you see `Hello there friend, this is your 1 visit`
